@@ -43,6 +43,27 @@ describe('getOwnPropertySymbols', function () {
     }).toThrow();
   });
 
+  it('should return an empty array for each value type', function () {
+    var values = [
+      1,
+      true,
+      'abc',
+      [],
+      {},
+      function () {},
+      /abc/,
+      new Date()
+    ];
+
+    var expected = values.map(function () {
+      return [];
+    });
+
+    var actual = values.map(getOwnPropertySymbols);
+
+    expect(actual).toEqual(expected);
+  });
+
   ifHasSymbolIt('should return an array containing the test symbol', function () {
     var testSymbol = Symbol('');
     var testObj = { a: 1 };

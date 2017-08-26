@@ -9,6 +9,7 @@
 
 'use strict';
 
+var toObject = require('to-object-x');
 var nativeGOPS;
 var symbols;
 var testSymbol;
@@ -27,9 +28,10 @@ if (require('has-symbol-support-x')) {
 
 var $gops;
 if (symbols && symbols.length === 1 && symbols[0] === testSymbol) {
-  $gops = nativeGOPS;
+  $gops = function getOwnPropertySymbols(obj) {
+    return nativeGOPS(toObject(obj));
+  };
 } else {
-  var toObject = require('to-object-x');
   $gops = function getOwnPropertySymbols(obj) {
     toObject(obj);
     return [];
