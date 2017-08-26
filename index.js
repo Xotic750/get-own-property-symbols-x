@@ -1,6 +1,6 @@
 /**
  * @file Creates an array of all symbol properties found directly upon a given object.
- * @version 1.0.0
+ * @version 1.0.1
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -52,6 +52,6 @@ if (symbols && symbols.length === 1 && symbols[0] === testSymbol) {
  * var testSymbol = Symbol('');
  * var testObj = { a: 1 };
  * testObj[testSymbol] = 2;
- * Object.getOwnPropertySymbols(testObj); // [testSymbol]
+ * getOwnPropertySymbols(testObj); // [testSymbol]
  */
 module.exports = $gops;

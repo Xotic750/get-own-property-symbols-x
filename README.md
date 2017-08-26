@@ -23,7 +23,7 @@
 ## get-own-property-symbols-x
 Creates an array of all symbol properties found directly upon a given object.
 
-**Version**: 1.0.0  
+**Version**: 1.0.1  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
@@ -52,5 +52,5 @@ var getOwnPropertySymbols = require('get-own-property-symbols-x');
 var testSymbol = Symbol('');
 var testObj = { a: 1 };
 testObj[testSymbol] = 2;
-Object.getOwnPropertySymbols(testObj); // [testSymbol]
+getOwnPropertySymbols(testObj); // [testSymbol]
 ```

@@ -1,6 +1,6 @@
 {
   "name": "get-own-property-symbols-x",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates an array of all symbol properties found directly upon a given object.",
   "homepage": "https://github.com/Xotic750/get-own-property-symbols-x",
   "author": {
