@@ -23,17 +23,17 @@
 ## get-own-property-symbols-x
 Creates an array of all symbol properties found directly upon a given object.
 
-**Version**: 1.0.1  
+**Version**: 1.1.0  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
 <a name="exp_module_get-own-property-symbols-x--module.exports"></a>
 
-### `module.exports` ⇒ <code>array</code> ⏏
+### `module.exports(obj)` ⇒ <code>array</code> ⏏
 This method creates an array of all symbol properties found directly upon a
 given object.
 
-**Kind**: Exported member  
+**Kind**: Exported function  
 **Returns**: <code>array</code> - An array of all symbol properties found directly upon the
  given object.  
 **Throws**:
@@ -47,10 +47,10 @@ given object.
 
 **Example**  
 ```js
-var getOwnPropertySymbols = require('get-own-property-symbols-x');
+var getOwnPropertySymbols = require('get-own-property-isWorking-x');
 
-var testSymbol = Symbol('');
+var symbol = Symbol('');
 var testObj = { a: 1 };
-testObj[testSymbol] = 2;
-getOwnPropertySymbols(testObj); // [testSymbol]
+testObj[symbol] = 2;
+getOwnPropertySymbols(testObj); // [symbol]
 ```
