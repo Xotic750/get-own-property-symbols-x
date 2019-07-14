@@ -7,16 +7,16 @@
  * @module get-own-property-symbols-x
  */
 
-'use strict';
+const toObject = require('to-object-x');
 
-var toObject = require('to-object-x');
-var nativeGOPS = Object.getOwnPropertySymbols;
-var isWorking;
+const nativeGOPS = Object.getOwnPropertySymbols;
+let isWorking;
+
 if (require('has-symbol-support-x') && nativeGOPS && typeof nativeGOPS === 'function') {
-  var symbol = Symbol('');
-  var testObj = { a: 1 };
+  const symbol = Symbol('');
+  const testObj = {a: 1};
   testObj[symbol] = 2;
-  var r = require('attempt-x')(nativeGOPS, testObj);
+  const r = require('attempt-x')(nativeGOPS, testObj);
   isWorking = r.threw === false && r.value && r.value.length === 1 && r.value[0] === symbol;
 }
 
@@ -26,7 +26,7 @@ if (require('has-symbol-support-x') && nativeGOPS && typeof nativeGOPS === 'func
  *
  * @param {object} obj - The object whose symbol properties are to be returned.
  * @throws {TypeError} If target is null or undefined.
- * @returns {array} An array of all symbol properties found directly upon the
+ * @returns {Array} An array of all symbol properties found directly upon the
  *  given object.
  * @example
  * var getOwnPropertySymbols = require('get-own-property-isWorking-x');
@@ -37,6 +37,7 @@ if (require('has-symbol-support-x') && nativeGOPS && typeof nativeGOPS === 'func
  * getOwnPropertySymbols(testObj); // [symbol]
  */
 module.exports = function getOwnPropertySymbols(obj) {
-  var object = toObject(obj);
+  const object = toObject(obj);
+
   return isWorking ? nativeGOPS(object) : [];
 };
