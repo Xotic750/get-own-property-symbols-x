@@ -1,19 +1,19 @@
 import toObject from 'to-object-x';
 import hasSymbolSupport from 'has-symbol-support-x';
 import attempt from 'attempt-x';
-
-const nativeGOPS = {}.constructor.getOwnPropertySymbols;
-let isWorking;
+var nativeGOPS = {}.constructor.getOwnPropertySymbols;
+var isWorking;
 
 if (hasSymbolSupport && nativeGOPS && typeof nativeGOPS === 'function') {
   /* eslint-disable-next-line compat/compat */
-  const symbol = Symbol('');
-  const testObj = {a: 1};
+  var symbol = Symbol('');
+  var testObj = {
+    a: 1
+  };
   testObj[symbol] = 2;
-  const r = attempt(nativeGOPS, testObj);
+  var r = attempt(nativeGOPS, testObj);
   isWorking = r.threw === false && r.value && r.value.length === 1 && r.value[0] === symbol;
 }
-
 /**
  * This method creates an array of all symbol properties found directly upon a
  * given object.
@@ -23,8 +23,11 @@ if (hasSymbolSupport && nativeGOPS && typeof nativeGOPS === 'function') {
  * @returns {Array} An array of all symbol properties found directly upon the
  *  given object.
  */
-export default function getOwnPropertySymbols(obj) {
-  const object = toObject(obj);
 
+
+export default function getOwnPropertySymbols(obj) {
+  var object = toObject(obj);
   return isWorking ? nativeGOPS(object) : [];
 }
+
+//# sourceMappingURL=get-own-property-symbols-x.esm.js.map
