@@ -1,7 +1,6 @@
 import noop from 'lodash/noop';
 import getOwnPropertySymbols from '../src/get-own-property-symbols-x';
 
-/* eslint-disable-next-line compat/compat */
 const hasSymbol = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
 const ifHasSymbolIt = hasSymbol ? it : xit;
 
@@ -18,7 +17,6 @@ describe('getOwnPropertySymbols', function() {
     }).toThrowErrorMatchingSnapshot();
 
     expect(function() {
-      /* eslint-disable-next-line no-void */
       getOwnPropertySymbols(void 0);
     }).toThrowErrorMatchingSnapshot();
 
@@ -42,7 +40,7 @@ describe('getOwnPropertySymbols', function() {
 
   ifHasSymbolIt('should return an array containing the test symbol', function() {
     expect.assertions(1);
-    /* eslint-disable-next-line compat/compat */
+
     const testSymbol = Symbol('');
     const testObj = {a: 1};
     testObj[testSymbol] = 2;
