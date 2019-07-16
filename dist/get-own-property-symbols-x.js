@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-16T12:40:00.321Z",
+  "date": "2019-07-16T21:48:38.536Z",
   "describe": "",
   "description": "Creates an array of all symbol properties found directly upon a given object.",
   "file": "get-own-property-symbols-x.js",
   "hash": "9478de23c8c8217ed309",
   "license": "MIT",
-  "version": "2.0.2"
+  "version": "2.0.3"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
