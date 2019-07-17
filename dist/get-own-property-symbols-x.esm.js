@@ -25,9 +25,11 @@ if (hasSymbolSupport && nativeGOPS && typeof nativeGOPS === 'function') {
  */
 
 
-export default function getOwnPropertySymbols(obj) {
+var getOwnPropertySymbols = function getOwnPropertySymbols(obj) {
   var object = toObject(obj);
   return isWorking ? nativeGOPS(object) : [];
-}
+};
+
+export default getOwnPropertySymbols;
 
 //# sourceMappingURL=get-own-property-symbols-x.esm.js.map

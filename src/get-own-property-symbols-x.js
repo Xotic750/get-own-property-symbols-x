@@ -23,8 +23,10 @@ if (hasSymbolSupport && nativeGOPS && typeof nativeGOPS === 'function') {
  * @returns {Array} An array of all symbol properties found directly upon the
  *  given object.
  */
-export default function getOwnPropertySymbols(obj) {
+const getOwnPropertySymbols = function getOwnPropertySymbols(obj) {
   const object = toObject(obj);
 
   return isWorking ? nativeGOPS(object) : [];
-}
+};
+
+export default getOwnPropertySymbols;

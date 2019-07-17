@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-16T21:48:38.536Z",
+  "date": "2019-07-17T17:50:50.278Z",
   "describe": "",
   "description": "Creates an array of all symbol properties found directly upon a given object.",
   "file": "get-own-property-symbols-x.js",
-  "hash": "9478de23c8c8217ed309",
+  "hash": "7c50820ac43a2748b350",
   "license": "MIT",
-  "version": "2.0.3"
+  "version": "2.0.4"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -275,10 +275,12 @@ __webpack_require__.r(__webpack_exports__);
  * @param {*} [value] - The value to check.
  * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
  */
-function isNil(value) {
+var isNil = function isNil(value) {
   /* eslint-disable-next-line lodash/prefer-is-nil */
   return value === null || typeof value === 'undefined';
-}
+};
+
+/* harmony default export */ var is_nil_x_esm = (isNil);
 
 
 // CONCATENATED MODULE: ./node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
@@ -292,13 +294,15 @@ function isNil(value) {
  * @returns {string} The `value`.
  */
 
-function requireObjectCoercible(value) {
-  if (isNil(value)) {
+var require_object_coercible_x_esm_requireObjectCoercible = function requireObjectCoercible(value) {
+  if (is_nil_x_esm(value)) {
     throw new TypeError("Cannot call method on ".concat(value));
   }
 
   return value;
-}
+};
+
+/* harmony default export */ var require_object_coercible_x_esm = (require_object_coercible_x_esm_requireObjectCoercible);
 
 
 // CONCATENATED MODULE: ./node_modules/to-object-x/dist/to-object-x.esm.js
@@ -313,9 +317,11 @@ var castObject = {}.constructor;
  * @returns {!object} The `value` converted to an object.
  */
 
-function toObject(value) {
-  return castObject(requireObjectCoercible(value));
-}
+var to_object_x_esm_toObject = function toObject(value) {
+  return castObject(require_object_coercible_x_esm(value));
+};
+
+/* harmony default export */ var to_object_x_esm = (to_object_x_esm_toObject);
 
 
 // CONCATENATED MODULE: ./node_modules/attempt-x/dist/attempt-x.esm.js
@@ -328,7 +334,7 @@ function toObject(value) {
  * @param {...*} [args] - The arguments to invoke the function with.
  * @returns {object} Returns an object of the result.
  */
-function attempt(fn) {
+var attempt = function attempt(fn) {
   try {
     for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
@@ -346,7 +352,9 @@ function attempt(fn) {
       value: e
     };
   }
-}
+};
+
+/* harmony default export */ var attempt_x_esm = (attempt);
 
 
 // EXTERNAL MODULE: ./node_modules/is-symbol/index.js
@@ -360,7 +368,7 @@ function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { t
 
 
 
-var hasSymbolSupport = attempt(function () {
+var hasSymbolSupport = attempt_x_esm(function () {
   _newArrowCheck(this, _this);
 
   /* eslint-disable-next-line compat/compat */
@@ -377,7 +385,6 @@ var hasSymbolSupport = attempt(function () {
 
 
 // CONCATENATED MODULE: ./dist/get-own-property-symbols-x.esm.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getOwnPropertySymbols; });
 
 
 
@@ -391,7 +398,7 @@ if (has_symbol_support_x_esm && nativeGOPS && typeof nativeGOPS === 'function') 
     a: 1
   };
   testObj[symbol] = 2;
-  var r = attempt(nativeGOPS, testObj);
+  var r = attempt_x_esm(nativeGOPS, testObj);
   isWorking = r.threw === false && r.value && r.value.length === 1 && r.value[0] === symbol;
 }
 /**
@@ -405,10 +412,12 @@ if (has_symbol_support_x_esm && nativeGOPS && typeof nativeGOPS === 'function') 
  */
 
 
-function getOwnPropertySymbols(obj) {
-  var object = toObject(obj);
+var get_own_property_symbols_x_esm_getOwnPropertySymbols = function getOwnPropertySymbols(obj) {
+  var object = to_object_x_esm(obj);
   return isWorking ? nativeGOPS(object) : [];
-}
+};
+
+/* harmony default export */ var get_own_property_symbols_x_esm = __webpack_exports__["default"] = (get_own_property_symbols_x_esm_getOwnPropertySymbols);
 
 
 
