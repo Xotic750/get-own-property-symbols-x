@@ -1,6 +1,6 @@
 {
   "name": "get-own-property-symbols-x",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Creates an array of all symbol properties found directly upon a given object.",
   "homepage": "https://github.com/Xotic750/get-own-property-symbols-x",
   "author": {
@@ -22,6 +22,7 @@
   ],
   "module": "dist/get-own-property-symbols-x.esm.js",
   "main": "dist/get-own-property-symbols-x.js",
+  "jsdelivr": "dist/get-own-property-symbols-x.min.js",
   "scripts": {
     "build:esm": "mkdirp dist && babel -s true --env-name esm src/get-own-property-symbols-x.js -o dist/get-own-property-symbols-x.esm.js",
     "build:base": "webpack --bail --progress --profile --colors",
@@ -49,9 +50,9 @@
     "url": "https://github.com/Xotic750/get-own-property-symbols-x/issues"
   },
   "dependencies": {
-    "attempt-x": "^2.0.16",
-    "has-symbol-support-x": "^2.0.15",
-    "to-object-x": "^2.0.14"
+    "attempt-x": "^2.0.18",
+    "has-symbol-support-x": "^2.0.17",
+    "to-object-x": "^2.0.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -89,7 +90,7 @@
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.13.6",
-    "eslint-plugin-jsdoc": "^15.7.1",
+    "eslint-plugin-jsdoc": "^15.7.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-no-use-extend-native": "^0.4.1",
