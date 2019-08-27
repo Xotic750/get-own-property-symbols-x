@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-20T19:45:48.704Z",
+  "date": "2019-08-27T20:32:51.451Z",
   "describe": "",
   "description": "Creates an array of all symbol properties found directly upon a given object.",
   "file": "get-own-property-symbols-x.js",
